@@ -47,7 +47,7 @@ interface IBannerItemProps {
 /**
  * 首页轮播图
  */
-export default function Banner(props: IBannerProps) {
+export default memo(function Banner(props: IBannerProps) {
   // 将每张图片切成15个小块，横向平铺
   const emWidth = 1180 / 15;
 
@@ -67,7 +67,7 @@ export default function Banner(props: IBannerProps) {
   const [isPromoted, setIsPromoted] = useState(-1);
 
   // 上一张
-  const prevHandler = useCallback(() => {
+  const prevClick = useCallback(() => {
     if (!isClickIn) {
       setIsPromoted(-1);
       setIsClickIn(true);
@@ -78,7 +78,7 @@ export default function Banner(props: IBannerProps) {
   }, [currentImgNumber, isClickIn]);
 
   // 下一张
-  const nextHandler = useCallback(() => {
+  const nextClick = useCallback(() => {
     if (!isClickIn) {
       setIsPromoted(-1);
       setIsClickIn(true);
@@ -118,6 +118,17 @@ export default function Banner(props: IBannerProps) {
   const onMouseEnter = useCallback(() => {
     setIsStop(true);
   }, []);
+
+  // onBullet
+  const onBullet = useCallback((n) => {
+    if (!isClickIn && currentImgNumber !== n) {
+      setIsPromoted(-1);
+      setIsClickIn(true);
+      setIsPrev(currentImgNumber > n);
+      setCurrentImgNumber(n);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isClickIn]);
 
   // 最后一个动画的 <em> dom
   const lastEm = useRef<any>();
@@ -171,7 +182,7 @@ export default function Banner(props: IBannerProps) {
                   width: emWidth + 'px',
                   backgroundImage: `url(${imgsMap[currentImgNumber]})`,
                   backgroundPosition: `-${i * emWidth}px 0px`,
-                  transitionDelay: isPrev ? `${(14 - i) * 0.05}s` : `${i * 0.05}s`,
+                  transitionDelay: isPrev ? `${(14 - i) * 0.04}s` : `${i * 0.04}s`,
                 }}
                 className={classnames({ animate: isClickIn })}
               ></em>
@@ -180,11 +191,27 @@ export default function Banner(props: IBannerProps) {
         }
       </ul>
 
-      <span className="prev" onClick={prevHandler}>&#xe658;</span>
-      <span className="next" onClick={nextHandler}>&#xe659;</span>
+      <span className="prev" onClick={prevClick}>&#xe658;</span>
+      <span className="next" onClick={nextClick}>&#xe659;</span>
+
+      <div className="banner-pagination">
+        {
+          imgsMap.map((img, idx) => {
+            return (
+              <dfn
+                onClick={() => onBullet(idx)}
+                className={classnames('bullet', {
+                  'on': idx === currentImgNumber
+                })}
+                key={idx}
+              ></dfn>
+            );
+          })
+        }
+      </div>
     </div>
   );
-}
+});
 
 interface IBannerProps {
   [propsName: string]: any

@@ -81,34 +81,42 @@ const Navbar = memo(function Navbar(props: INavbarProps) {
   return (
     <ul className="navbar clearfix">
       <li className="navbar__item"><Link to="/">首页</Link></li>
-      <li className="navbar__item"><Link to="/">学习</Link></li>
       <li className="navbar__item">
-        <Link to="/" className="more">更多更多</Link>
+        <Link to="/" className="more">笔记</Link>
         <SubNav items={[
           {
-            text: '线下课程1',
+            text: 'Java',
             url: '/',
           },
           {
-            text: '线上课程1',
+            text: 'React',
             url: '/',
           }
         ]} />
       </li>
       <li className="navbar__item">
-        <Link to="/" className="more">更多</Link>
+        <Link to="/">练习</Link>
+      </li>
+      <li className="navbar__item">
+        <Link to="/">作品</Link>
+      </li>
+      <li className="navbar__item">
+        <Link to="/" className="more">学习</Link>
         <SubNav items={[
           {
-            text: '线下课程2',
+            text: '感兴趣的文章',
             url: '/',
           },
           {
-            text: '线上课程2',
+            text: '需实现特效',
             url: '/',
           }
         ]} />
       </li>
-    </ul>
+      <li className="navbar__item">
+        <Link to="/">个人难题</Link>
+      </li>
+    </ul >
   );
 })
 
@@ -119,7 +127,7 @@ interface INavbarProps {
 /**
  * 网站头部
  */
-export default function Header(props: IHeaderProps) {
+export default memo(function Header(props: IHeaderProps) {
 
   return (
     <div className="header">
@@ -131,7 +139,7 @@ export default function Header(props: IHeaderProps) {
       </div>
     </div>
   );
-}
+});
 
 interface IHeaderProps {
   [propsName: string]: any
