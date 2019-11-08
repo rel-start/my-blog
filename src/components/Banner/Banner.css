@@ -19,7 +19,7 @@
     transform: translateY(-50%);
     font-size: 70px;
     user-select: none;
-    color: #e3eae5;
+    color: #bbb;
     opacity: 0;
     transition: opacity .5s;
 
