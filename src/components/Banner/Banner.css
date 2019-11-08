@@ -1,0 +1,66 @@
+.banner {
+  position: relative;
+  margin-top: 20px;
+  height: 280px;
+
+  .prev,
+  .next {
+    font-family: 'duandian';
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    font-size: 70px;
+    user-select: none;
+    color: #e3eae5;
+    opacity: 0;
+    transition: opacity .5s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .prev {
+    left: -60px;
+    right: auto;
+  }
+}
+
+.banner-list {
+  width: 1180px;
+  height: 280px;
+
+  em {
+    position: absolute;
+    background-size: 1180px 280px;
+    opacity: 0;
+    height: 280px;
+    transition: none;
+
+    &:first-of-type {
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    &.animate {
+      opacity: 1;
+      transition-property: opacity;
+      transition-duration: 1s;
+    }
+  }
+}
+
+.banner-item {
+  position: absolute;
+  width: 1180px;
+  height: 280px;
+  background-size: 1180px 280px;
+  border-radius: 8px;
+}
