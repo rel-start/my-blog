@@ -1,9 +1,8 @@
-import './Banner.css';
+import styles from './Banner.module.css';
 import classnames from 'classnames';
 import React, {
   memo, useState, useCallback, useRef, useEffect
 } from 'react';
-// import useInterval from '@assets/scripts/useInterval';
 
 /**
  * 图片数据
@@ -29,7 +28,7 @@ const BannerItem = memo(function BannerItem(props: IBannerItemProps) {
 
   return (
     <li
-      className="banner-item"
+      className={styles['banner-item']}
       style={{
         backgroundImage: `url(${img})`,
         visibility: isVisible ? 'visible' : 'hidden',
@@ -49,7 +48,7 @@ interface IBannerItemProps {
  */
 export default memo(function Banner(props: IBannerProps) {
   // 将每张图片切成15个小块，横向平铺
-  const emWidth = 1180 / 15;
+  const emWidth = 1180 / 10;
 
   // 是否被点击中。解决多次快速点击，动画未能及时过渡完的问题。用这 state 控制
   const [isClickIn, setIsClickIn] = useState(false);
@@ -153,8 +152,8 @@ export default memo(function Banner(props: IBannerProps) {
   }, [lastTrainsitionEnd]);
 
   return (
-    <div className="banner w1180" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-      <ul className="banner-list">
+    <div className={classnames(styles.banner)} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+      <ul className={styles['banner-list']}>
         {
           imgsMap.map((img: any, idx: number) => {
             return (
@@ -169,10 +168,10 @@ export default memo(function Banner(props: IBannerProps) {
         }
 
         {
-          new Array(15).fill(null).map((item, i) => {
+          new Array(10).fill(null).map((item, i) => {
             // const rowNum = i % 5;
             // const colNum = Math.floor(i / 5);
-            const lastTrainsitionendIndex = isPrev ? 0 : 14;
+            const lastTrainsitionendIndex = isPrev ? 0 : 9;
             return (
               <em
                 key={i}
@@ -182,26 +181,26 @@ export default memo(function Banner(props: IBannerProps) {
                   width: emWidth + 'px',
                   backgroundImage: `url(${imgsMap[currentImgNumber]})`,
                   backgroundPosition: `-${i * emWidth}px 0px`,
-                  transitionDelay: isPrev ? `${(14 - i) * 0.04}s` : `${i * 0.04}s`,
+                  transitionDelay: isPrev ? `${(9 - i) * 0.04}s` : `${i * 0.04}s`,
                 }}
-                className={classnames({ animate: isClickIn })}
+                className={classnames({ [styles['animate']]: isClickIn })}
               ></em>
             );
           })
         }
       </ul>
 
-      <span className="prev" onClick={prevClick}>&#xe658;</span>
-      <span className="next" onClick={nextClick}>&#xe659;</span>
+      <span className={styles.prev} onClick={prevClick}>&#xe658;</span>
+      <span className={styles.next} onClick={nextClick}>&#xe659;</span>
 
-      <div className="banner-pagination">
+      <div className={styles['banner-pagination']}>
         {
           imgsMap.map((img, idx) => {
             return (
               <dfn
                 onClick={() => onBullet(idx)}
-                className={classnames('bullet', {
-                  'on': idx === currentImgNumber
+                className={classnames(styles.bullet, {
+                  [styles.on]: idx === currentImgNumber
                 })}
                 key={idx}
               ></dfn>

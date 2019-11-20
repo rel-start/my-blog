@@ -1,18 +1,42 @@
-import './Tab.css';
+import styles from './Tab.module.css';
 import React, {
-  memo,
+  memo, useState, useCallback
 } from 'react';
 
 export default memo(function Tab(props: ITabProps) {
-  const {
 
+  const {
+    datas= [
+      '常用笔记',
+      '最新笔记',
+      '所有笔记'
+    ],
+    onTabChange = () => {},
   } = props;
 
+  const [curTabIndex, setCurTabIndex] = useState(0);
+
+  const onClick = useCallback((i, event) => {
+    if (i === curTabIndex) { return; }
+    setCurTabIndex(i);
+
+    onTabChange(i, event);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [curTabIndex]);
+
   return (
-    <div className="tab">
-      <span className="on">常用笔记</span>
-      <span>最新笔记</span>
-      <span>所有笔记</span>
+    <div className={styles["tab"]}>
+      {
+        datas.map((txt:any, idx:number) => {
+          return (
+            <span
+              key={txt}
+              className={idx === curTabIndex ? styles['on'] : ''}
+              onClick={(event) => onClick(idx, event)}
+            >{txt}</span>
+          );
+        })
+      }
     </div>
   );
 })

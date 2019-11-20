@@ -1,0 +1,15 @@
+@value unit from '../../assets/stylesheets/global.css';
+
+.buttonToolbar {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 0;
+
+  & > .buttonGroup {
+    margin-right: unit;
+  }
+
+  & > :last-child {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,23 @@
+.footer-wrapper {
+  background-color: var(--ring-body-background-color);
+  padding: 20px 0;
+}
+
+.footer {
+  composes: w1180 clearfix from '../../assets/stylesheets/global.css';
+  line-height: 42px;
+
+  .logo {
+    font-size: 42px;
+    margin-left: 20px;
+    color: var(--ring-logo-color);
+    font-family: "duandian";
+    float: left;
+  }
+
+  .copy {
+    text-align: center;
+    display: table-cell;
+    width: 9999px;
+  }
+}

@@ -1,0 +1,137 @@
+@import '../../assets/stylesheets/variables.css';
+
+.likes-wrapper {
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.likes {
+  composes: w1180 from '../../assets/stylesheets/global.css';
+}
+
+.tab-wrapper {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* article */
+.likes-article {
+  width: 820px;
+  float: left;
+}
+
+.article-item {
+  position: relative;
+  border-bottom: 1px solid #e0e7eb;
+  padding: 20px 0;
+  composes: clearfix from '../../assets/stylesheets/global.css';
+
+  &:hover {
+    .shade {
+      border-color: var(--ring-a-hover-color);
+    }
+
+    .img {
+      transform: var(--ring-img-scale);
+    }
+  }
+
+  .shade {
+    z-index: 0;
+    position: absolute;
+    top: -1px;
+    right: -25px;
+    bottom: -1px;
+    left: -23px;
+    border: 3px solid transparent;
+    transition: border-color var(--ring-ease);
+  }
+
+  .info {
+    z-index: 1;
+    position: relative;
+    display: block;
+
+    &:hover {
+      color: inherit;
+
+      .title {
+        color: var(--ring-a-hover-color);
+      }
+    }
+
+    .img-wrapper {
+      width: 160px;
+      height: 120px;
+      margin-right: 20px;
+      float: left;
+      overflow: hidden;
+
+      .img {
+        width: 160px;
+        height: 120px;
+        transition: transform var(--ring-ease);
+      }
+    }
+
+    .msg {
+      display: table-cell;
+
+      .head {
+        line-height: 27px;
+        height: 27px;
+
+        .times {
+          float: right;
+          color: var(--ring-times-color);
+          font-size: 12px;
+        }
+
+        .title {
+          font-size: 18px;
+          float: left;
+          transition: color var(--ring-ease);
+        }
+      }
+
+      .description {
+        height: 44px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        line-height: 22px;
+        overflow: hidden;
+      }
+
+      .txt {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.pagination-wrapper {
+  margin: 20px 0;
+  text-align: center;
+}
+
+/*aside*/
+.likes-aside {
+  width: 280px;
+  float: right;
+
+  .aside-head {
+    margin: 50px 0 20px;
+    color: var(--ring-title-color);
+  }
+
+  .aside-list {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .5);
+
+    .img-box {
+      .pic {
+        width: 280px;
+        height: 150px;
+      }
+    }
+  }
+}

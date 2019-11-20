@@ -1,0 +1,17 @@
+.ellipsis {
+  composes: ellipsis from '../../assets/stylesheets/global.css';
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.iconfont {
+  composes: duandian from '../../assets/stylesheets/global.css';
+  font-size: 18px;
+  margin-right: 3px;
+}
+

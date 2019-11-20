@@ -1,0 +1,88 @@
+@import '../../assets/stylesheets/variables.css';
+
+.practise-wrapper {
+  background-color: var(--ring-practise-background-color);
+}
+
+.practise {
+  padding: 40px 0;
+  composes: w1180 from '../../assets/stylesheets/global.css';
+
+  .practise-head {
+    margin-bottom: 20px;
+    color: var(--ring-title-color);
+
+    & .more {
+      float: right;
+    }
+  }
+}
+
+.practise-list {
+  composes: clearfix from '../../assets/stylesheets/global.css';
+
+  .practise-item {
+    position: relative;
+    width: 220px;
+    height: 476px;
+    margin-right: 20px;
+    background-size: cover;
+    float: left;
+    border-radius: 20px;
+    overflow: hidden;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .info {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 10px;
+      color: #fff;
+      visibility: hidden;
+      transition: opacity .3s;
+      opacity: 0;
+      line-height: 24px;
+    }
+
+    .txt {
+      font-weight: normal;
+    }
+
+    .links {
+      display: flex;
+
+      & a:first-child {
+        margin-right: 10px;
+        margin-left: 3px;
+      }
+
+      & a:hover {
+        color: inherit;
+      }
+    }
+
+    .shade {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, .2) 0, rgba(0, 0, 0, .199) 3.5%, rgba(0, 0, 0, .195) 7%, rgba(0, 0, 0, .19) 10.35%, rgba(0, 0, 0, .182) 13.85%, rgba(0, 0, 0, .174) 17.35%, rgba(0, 0, 0, .165) 20.85%, rgba(0, 0, 0, .155) 24.35%, rgba(0, 0, 0, .145) 27.85%, rgba(0, 0, 0, .135) 31.35%, rgba(0, 0, 0, .126) 34.85%, rgba(0, 0, 0, .118) 38.35%, rgba(0, 0, 0, .11) 41.85%, rgba(0, 0, 0, .105) 45.35%, rgba(0, 0, 0, .1) 48.85%, rgba(0, 0, 0, .103) 52.35%, rgba(0, 0, 0, .112) 55.85%, rgba(0, 0, 0, .126) 59.35%, rgba(0, 0, 0, .144) 62.85%, rgba(0, 0, 0, .165) 66.35%, rgba(0, 0, 0, .188) 69.85%, rgba(0, 0, 0, .213) 73.35%, rgba(0, 0, 0, .237) 76.85%, rgba(0, 0, 0, .262) 80.35%, rgba(0, 0, 0, .285) 83.85%, rgba(0, 0, 0, .306) 87.35%, rgba(0, 0, 0, .324) 90.85%, rgba(0, 0, 0, .338) 94.35%, rgba(0, 0, 0, .347) 97.85%, rgba(0, 0, 0, .35));
+      transition: opacity .3s;
+    }
+
+    &:hover {
+      .shade,
+      .info {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
