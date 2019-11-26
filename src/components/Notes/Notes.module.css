@@ -78,6 +78,7 @@
 .notes-list {
   composes: clearfix from '../../assets/stylesheets/global.css';
   margin: 20px -10px 0;
+  overflow: hidden;
 }
 
 .notes-item {

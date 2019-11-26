@@ -6,14 +6,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 import '@assets/stylesheets/rest.css';
 import '@assets/stylesheets/index.css';
-import Home from '@pages/Home/Home';
 import store from '@reducers/store.js';
+import routes from './routes/index';
 
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/my-blog">
     <Provider store={store}>
-      <Home />
+      {routes()}
     </Provider>
   </BrowserRouter>
   , document.getElementById('root'));

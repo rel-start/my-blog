@@ -5,7 +5,7 @@
   --ring-borders-color: #b8d1e5;
   --ring-border-hover-color: #80c6ff;
   --ring-border-disabled-color: #dbdbdb;
-
+  
   /* Text */
   --ring-text-color: #1f2326;
   --ring-disabled-color: #999;  
@@ -19,6 +19,7 @@
   --ring-selected-background-color: #d4edff;
   --ring-body-background-color: #f0f3f5;
   --ring-practise-background-color: #eaeef2;
+  --rint-totop-background-color: #dbe0e6;
 
   /* Metrics */
   --ring-border-radius: 3px;

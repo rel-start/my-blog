@@ -13,7 +13,7 @@ const HLogin = memo(function HLogin(props: ILoginProps) {
 
   return (
     <div className={styles["h-login"]}>
-      <Link to="/">登录</Link>
+      <Link to="/login">登录</Link>
     </div>
   );
 })

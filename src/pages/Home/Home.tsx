@@ -6,8 +6,11 @@ import Notes from '@components/Notes/Notes';
 import Practise from '@components/Practise/Practise';
 import Likes from '@components/Likes/Likes';
 import Footer from '@components/Footer/Footer';
+import Totops from '@components/totop-group/totop-group';
 
 export default function Home(props: IHomeProps) {
+
+  
 
   return (
     <>
@@ -17,6 +20,7 @@ export default function Home(props: IHomeProps) {
       <Practise />
       <Likes />
       <Footer />
+      <Totops />
     </>
   );
 }
