@@ -27,16 +27,16 @@
   composes: clearfix from '../../assets/stylesheets/global.css';
 
   &:hover {
-    .shade {
+    & .shade {
       border-color: var(--ring-a-hover-color);
     }
 
-    .img {
+    & .img {
       transform: var(--ring-img-scale);
     }
   }
 
-  .shade {
+  & .shade {
     z-index: 0;
     position: absolute;
     top: -1px;
@@ -47,7 +47,7 @@
     transition: border-color var(--ring-ease);
   }
 
-  .info {
+  & .info {
     z-index: 1;
     position: relative;
     display: block;
@@ -55,46 +55,46 @@
     &:hover {
       color: inherit;
 
-      .title {
+      & .title {
         color: var(--ring-a-hover-color);
       }
     }
 
-    .img-wrapper {
+    & .img-wrapper {
       width: 160px;
       height: 120px;
       margin-right: 20px;
       float: left;
       overflow: hidden;
 
-      .img {
+      & .img {
         width: 160px;
         height: 120px;
         transition: transform var(--ring-ease);
       }
     }
 
-    .msg {
+    & .msg {
       display: table-cell;
 
-      .head {
+      & .head {
         line-height: 27px;
         height: 27px;
 
-        .times {
+        & .times {
           float: right;
           color: var(--ring-times-color);
           font-size: 12px;
         }
 
-        .title {
+        & .title {
           font-size: 18px;
           float: left;
           transition: color var(--ring-ease);
         }
       }
 
-      .description {
+      & .description {
         height: 44px;
         margin-top: 5px;
         margin-bottom: 10px;
@@ -102,7 +102,7 @@
         overflow: hidden;
       }
 
-      .txt {
+      & .txt {
         margin-left: 5px;
       }
     }
@@ -119,15 +119,15 @@
   width: 280px;
   float: right;
 
-  .aside-head {
+  & .aside-head {
     margin: 50px 0 20px;
     color: var(--ring-title-color);
   }
 
-  .aside-list {
+  & .aside-list {
     box-shadow: 0 1px 4px rgba(0, 0, 0, .5);
 
-    .img-box {
+    & .img-box {
       .pic {
         width: 280px;
         height: 150px;

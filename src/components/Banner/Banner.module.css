@@ -11,8 +11,8 @@
     }
   }
 
-  .prev,
-  .next {
+  & .prev,
+  & .next {
     font-family: 'duandian';
     position: absolute;
     right: -60px;
@@ -30,7 +30,7 @@
     }
   }
 
-  .prev {
+  & .prev {
     left: -60px;
     right: auto;
   }
@@ -40,7 +40,7 @@
   width: 1180px;
   height: 280px;
 
-  em {
+  & em {
     position: absolute;
     background-size: 1180px 280px;
     opacity: 0;
@@ -85,7 +85,7 @@
   opacity: 0;
   transition: opacity .5s;
 
-  .bullet {
+  & .bullet {
     padding: 5px;
     float: left;
     cursor: pointer;

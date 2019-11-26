@@ -98,13 +98,18 @@ module.exports = function (webpackEnv) {
           ident: 'postcss',
           plugins: () => [
             require('postcss-modules-values-replace')(),
-            require('postcss-nested'),
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
                 flexbox: 'no-2009',
               },
               stage: 3,
+              features: {
+                'nesting-rules': true,
+                'custom-properties': {
+                  preserve: true
+                }
+              }
             }),
             // require('autoprefixer'),
             // Adds PostCSS Normalize as the reset css with default options,

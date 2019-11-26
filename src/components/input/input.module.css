@@ -1,0 +1,137 @@
+@import '../../assets/stylesheets/variables.css';
+
+@value unit from '../../assets/stylesheets/global.css';
+
+.container {
+  position: relative;
+  height: 60px;
+  min-height: 60px;
+  padding-top: calc(unit * 2);
+  font-size: var(--ring-font-size);
+  composes: font-lower from "../../assets/stylesheets/global.css";
+  box-sizing: border-box;
+
+  & * {
+    box-sizing: border-box;
+  }
+}
+
+.input {
+  width: 100%;
+  min-height: calc(unit * 4);
+  border: none;
+  padding: 0;
+  font: inherit;
+  background-color: transparent;
+  line-height: calc(unit * 4);
+  outline: none;
+  caret-color: var(--ring-main-color);
+
+  @nest .clearable & {
+    padding-right: calc(unit * 3);
+  }
+
+  @nest .light & {
+    color: var(--ring-text-color);
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.label {
+  position: absolute;
+  top: calc(unit * 3);
+  left: 0;
+  transition: transform var(--ring-fast-ease), color var(--ring-fast-ease);
+  transform-origin: top left;
+  pointer-events: none;
+
+  @nest .light & {
+    color: var(--ring-placeholder-color);
+  }
+}
+
+.input:focus ~ .label,
+.container:not(.empty) > .label {
+  transform: translateY(calc(unit * -2 - 1px)) scale(calc(12 / 13));
+}
+
+.input:focus ~ .label {
+  color: var(--ring-main-color);
+}
+
+.error > .input {
+  caret-color: var(--ring-error-color);
+
+  &:focus ~ .label {
+    color: var(--ring-error-color);
+  }
+}
+
+.clear {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  width: 20px;
+  padding-right: 0;
+  font-size: 16px;
+  color: var(--ring-placeholder-color);
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+
+  @nest .empty & {
+    display: none;
+  }
+
+  &:hover {
+    color: var(--ring-main-color);
+  }
+}
+
+.underline {
+  height: 1px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+
+  @nest .light & {
+    border-color: var(--ring-placeholder-color);
+  }
+}
+
+.focusUnderline,
+.errorUnderline {
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: top left;
+}
+
+.focusUnderline {
+  margin-top: -1px;
+  background: var(--ring-main-color);
+}
+
+.errorUnderline {
+  margin-top: -2px;
+  background: var(--ring-icon-error-color);
+}
+
+.input:focus ~ .focusUnderline,
+.error > .errorUnderline {
+  transition: transform var(--ring-fast-ease);
+  transform: scaleX(1);
+}
+
+.errorText {
+  /* height: 30px; */
+  padding: calc(unit / 4) 0 unit;
+  font-size: var(--ring-font-size-smaller);
+  color: var(--ring-error-color);
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: height 0.3s ease-out;
+  line-height: var(--ring-line-height-lowest);
+}

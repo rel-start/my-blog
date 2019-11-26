@@ -8,7 +8,7 @@
   padding: 40px 0;
   composes: w1180 from '../../assets/stylesheets/global.css';
 
-  .practise-head {
+  & .practise-head {
     margin-bottom: 20px;
     color: var(--ring-title-color);
 
@@ -21,7 +21,7 @@
 .practise-list {
   composes: clearfix from '../../assets/stylesheets/global.css';
 
-  .practise-item {
+  & .practise-item {
     position: relative;
     width: 220px;
     height: 476px;
@@ -35,7 +35,7 @@
       margin-right: 0;
     }
 
-    .info {
+    & .info {
       position: absolute;
       right: 0;
       bottom: 0;
@@ -48,11 +48,11 @@
       line-height: 24px;
     }
 
-    .txt {
+    & .txt {
       font-weight: normal;
     }
 
-    .links {
+    & .links {
       display: flex;
 
       & a:first-child {
@@ -65,7 +65,7 @@
       }
     }
 
-    .shade {
+    & .shade {
       position: absolute;
       top: 0;
       right: 0;
@@ -78,7 +78,7 @@
     }
 
     &:hover {
-      .shade,
+      & .shade,
       .info {
         visibility: visible;
         opacity: 1;

@@ -105,10 +105,12 @@ html {
   -ms-text-size-adjust: 100%; /* 1 */
   -webkit-text-size-adjust: 100%; /* 1 */
   text-size-adjust: 100%;
+  min-height: 100%;
 }
 
 body {
   min-width: 1300px;
+  min-height: 100%;
   font-size: 14px;
   font-size: 1.4rem; /* 2 */
   color: #34495e;

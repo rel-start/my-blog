@@ -7,7 +7,7 @@
   composes: w1180 clearfix from '../../assets/stylesheets/global.css';
   line-height: 42px;
 
-  .logo {
+  & .logo {
     font-size: 42px;
     margin-left: 20px;
     color: var(--ring-logo-color);
@@ -15,7 +15,7 @@
     float: left;
   }
 
-  .copy {
+  & .copy {
     text-align: center;
     display: table-cell;
     width: 9999px;

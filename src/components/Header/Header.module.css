@@ -4,11 +4,11 @@
   height: 70px;
   background-color: #fff;
 
-  h1 {
+  & h1 {
     float: left;
   }
 
-  .logo {
+  & .logo {
     margin-right: 15px;
     margin-left: 10px;
     font-size: 42px;
@@ -30,18 +30,18 @@
   float: left;
 
   &:hover {
-    .subnav {
+    & .subnav {
       display: block;
     }
 
-    > a {
+    & > a {
       color: inherit;
       border-top-color: #3498db;
       box-shadow: 0 0 2px rgba(0, 0, 0, .1);
     }
   }
 
-  > a {
+  & > a {
     display: block;
     min-width: 80px;
     height: 70px;
@@ -70,7 +70,7 @@
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .1);
 
-  a {
+  & a {
     display: block;
     min-width: 80px;
     height: 40px;
@@ -102,7 +102,7 @@
     content: '';
   }
 
-  .input-group {
+  & .input-group {
     position: absolute;
     top: 18px;
     right: 50px;
@@ -118,7 +118,7 @@
       opacity: 1;
     }
 
-    input {
+    & input {
       height: 24px;
       margin-top: 5px;
       border: 0;
@@ -127,7 +127,7 @@
     }
   }
 
-  .icon-search {
+  & .icon-search {
     z-index: 2;
     -webkit-user-select: none;
     position: relative;
@@ -155,7 +155,7 @@
   margin-left: 20px;
   float: right;
 
-  a {
+  & a {
     display: block;
     width: 60px;
     height: 70px;

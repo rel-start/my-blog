@@ -1,9 +1,11 @@
 import React,{memo} from 'react';
 
+import styles from './Loading.module.css';
+
 export default memo(function Loading(props: ILoadingProps) {
 
   return (
-    <div>Loading</div>
+    <div className={styles["loading"]}></div>
   );
 })
 
