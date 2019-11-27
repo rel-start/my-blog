@@ -2,17 +2,18 @@
 
 .totop-group {
   position: fixed;
-  bottom: 100px;
   right: 50px;
+  bottom: 100px;
   opacity: 0;
   transition: opacity var(--ring-ease);
 
   & .totop {
-    background: url('../../assets/imgs/top_up.png') 0 0 no-repeat;
-    cursor: pointer;
     width: 48px;
     height: 48px;
+    background: url('../../assets/imgs/top_up.png') 0 0 no-repeat;
+    cursor: pointer;
     user-select: none;
+
     &:hover {
       background-position: 0 -50px;
     }

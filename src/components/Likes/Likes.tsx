@@ -2,12 +2,13 @@ import React, {
   memo,
 } from 'react';
 import { Link } from 'react-router-dom';
-import Tab from '../Tab/Tab';
-import styles from './Likes.module.css';
-import TextUser from '../text-user/text-user';
-import Text from '../text/text';
-import Pager from '../pager/pager';
+import styles from './likes.module.css';
 import dayjs from 'dayjs';
+
+import Tab from '@components/tab/tab';
+import TextUser from '@components/text-user/text-user';
+import Text from '@components/text/text';
+import Pager from '@components/pager/pager';
 
 
 /**
@@ -95,7 +96,7 @@ const AsideItem = memo(function AsideItem(props: IAsideItemProps) {
 
   return (
     <a href={url} className={styles["img-box"]} target="_blank" rel="noopener noreferrer">
-      <img className={styles["pic"]} src={img} alt=""/>
+      <img className={styles["pic"]} src={img} alt="" />
     </a>
   );
 })

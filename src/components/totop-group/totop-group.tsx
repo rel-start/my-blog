@@ -1,9 +1,9 @@
 import React, {
   memo,
 } from 'react';
-import useWinScroll from '@assets/scripts/useWinScroll';
-
 import styles from './totop-group.module.css';
+
+import useWinScroll from '@assets/scripts/useWinScroll';
 
 /**
  * @name Totop

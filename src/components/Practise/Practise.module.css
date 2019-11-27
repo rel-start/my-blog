@@ -79,7 +79,7 @@
 
     &:hover {
       & .shade,
-      .info {
+      & .info {
         visibility: visible;
         opacity: 1;
       }

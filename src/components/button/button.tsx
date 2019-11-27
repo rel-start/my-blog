@@ -1,11 +1,9 @@
 import React, {
   memo,
 } from 'react';
-import classname from 'classnames';
-
-import Theme from '@assets/scripts/theme';
-
 import styles from './button.module.css';
+import classname from 'classnames';
+import Theme from '@assets/scripts/theme';
 
 
 /**
@@ -15,21 +13,20 @@ export default memo(function TButton(props: IButtonProps) {
   const {
     theme = Theme.LIGHT,
     onMouseDown = () => { },
-    children,
+    children = "1",
     className,
     active,
-    isusedefaultstyle = true,
   }: any = props;
 
   const Tag = 'button';
 
+  // Button样式：主要是以theme来区分
   const classes = classname(
     styles.button,
     className,
     styles[theme],
     {
-      [styles.active]: active,
-      [styles.default]: isusedefaultstyle
+      [styles.active]: active
     }
   );
 
@@ -53,7 +50,7 @@ export default memo(function TButton(props: IButtonProps) {
       {content}
     </Tag>
   );
-})
+});
 
 interface IButtonProps {
   theme?: string,

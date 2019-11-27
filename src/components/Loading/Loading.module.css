@@ -1,10 +1,10 @@
 .loading {
   position: absolute;
-  font-size: 50px;
   top: calc(50% - 1.25em);
   left: calc(50% - 1.25em);
   width: 2.5em;
   height: 2.5em;
+  font-size: 50px;
   transform: rotate(165deg);
 }
 

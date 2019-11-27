@@ -1,9 +1,9 @@
 import React, {
   memo,
 } from 'react';
+import styles from './practise.module.css';
 import { Link } from 'react-router-dom';
 
-import styles from './Practise.module.css';
 import TextUser from '../text-user/text-user';
 import Text from '../text/text';
 
@@ -32,7 +32,7 @@ const PractiseItem = memo(function PractiseItem(props: IPractiseItemProps) {
           <Text className={styles["txt"]} title={auther} types="ellipsis">{auther}</Text>
         </TextUser>
         <p className={styles["links"]}>
-          
+
           <Text href={github} codes="&#xe722;" types="icons">github</Text>
           <Text href={codeSandbox} codes="&#xe69f;" types="icons">codeSandbox</Text>
         </p>

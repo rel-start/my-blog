@@ -1,6 +1,5 @@
-import React,{memo} from 'react';
-
-import styles from './Loading.module.css';
+import React, { memo } from 'react';
+import styles from './loading.module.css';
 
 export default memo(function Loading(props: ILoadingProps) {
 

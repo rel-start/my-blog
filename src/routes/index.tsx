@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import { Route, Switch, RouteProps } from 'react-router-dom';
 import NotFound from '@pages/NotFound/NotFound';
-import Loading from '@components/Loading/Loading';
+import Loading from '@components/loading/loading';
 
 /**
  * @name 页面组件

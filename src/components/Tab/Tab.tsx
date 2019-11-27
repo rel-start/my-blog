@@ -1,17 +1,17 @@
-import styles from './Tab.module.css';
 import React, {
   memo, useState, useCallback
 } from 'react';
+import styles from './tab.module.css';
 
 export default memo(function Tab(props: ITabProps) {
 
   const {
-    datas= [
+    datas = [
       '常用笔记',
       '最新笔记',
       '所有笔记'
     ],
-    onTabChange = () => {},
+    onTabChange = () => { },
   } = props;
 
   const [curTabIndex, setCurTabIndex] = useState(0);
@@ -27,7 +27,7 @@ export default memo(function Tab(props: ITabProps) {
   return (
     <div className={styles["tab"]}>
       {
-        datas.map((txt:any, idx:number) => {
+        datas.map((txt: any, idx: number) => {
           return (
             <span
               key={txt}

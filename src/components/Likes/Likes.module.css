@@ -78,13 +78,13 @@
       display: table-cell;
 
       & .head {
-        line-height: 27px;
         height: 27px;
+        line-height: 27px;
 
         & .times {
-          float: right;
-          color: var(--ring-times-color);
           font-size: 12px;
+          color: var(--ring-times-color);
+          float: right;
         }
 
         & .title {

@@ -1,0 +1,11 @@
+.canvas-item {
+  width: 580px;
+  height: 294px;
+  margin: 0 10px 15px;
+  float: left;
+
+  & .scene {
+    width: 580px;
+    height: 294px;
+  }
+}

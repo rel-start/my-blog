@@ -1,7 +1,6 @@
 import React, {
   memo,
 } from 'react';
-
 import styles from './text.module.css';
 import classnames from 'classnames';
 

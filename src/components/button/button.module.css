@@ -6,9 +6,56 @@
 
 @value button-shadow: inset 0 0 0 1px;
 
+
+/* Login组件的登录按钮 */
+.submit {
+  width: 100%;
+  height: 50px;
+  margin: 0;
+  border: 0;
+  font-size: 18px;
+  color: var(--ring-submit-font-color);
+  background-color: var(--ring-submit-background-color);
+  border-radius: 5px;
+}
+
+/* pager组件 */
+.dot {
+  width: 38px;
+  height: 38px;
+  margin: 0 10px;
+  margin: 0 10px;
+  border: 1px solid #bdc3c7;
+  border: 1px solid #bdc3c7;
+  padding: 0;
+  font-size: 20px;
+  color: #bdc3c7;
+  background-color: transparent;
+  border-radius: 19px !important;
+  text-align: center;
+  line-height: 36px;
+
+  &:hover,
+  &:active,
+  &.active {
+    color: #000;
+    border-color: #000;
+  }
+}
+
+/* 默认样式 */
 .light {
+  width: auto;
+  height: height;
+  margin: 0;
+  border: 0;
+  padding: 0 calc(unit * 2);
+  font-size: var(--ring-font-size-smaller);
   color: var(--ring-text-color);
   background-color: var(--ring-content-background-color);
+  composes: light from '../button-group/button-group.module.css';
+  border-radius: var(--ring-border-radius);
+  line-height: height;
   box-shadow: button-shadow var(--ring-borders-color);
 
   &:hover {
@@ -32,59 +79,8 @@
   }
 
   &[disabled] {
-    box-shadow: button-shadow var(--ring-border-disabled-color);
     color: var(--ring-disabled-color);
-  }
-}
-
-.submit {
-  width: 100%;
-  height: 50px;
-  background-color: var(--ring-submit-background-color);
-  border-radius: 5px;
-  border: 0;
-  margin: 0;
-  color: var(--ring-submit-font-color);
-  font-size: 18px;
-}
-
-.dot {
-  border-radius: 19px !important;
-  width: 38px;
-  height: 38px;
-  padding: 0;
-  border: 1px solid #bdc3c7;
-  color: #bdc3c7;
-  text-align: center;
-  line-height: 36px;
-  font-size: 20px;
-  margin: 0 10px;
-  border: 1px solid #bdc3c7;
-  margin: 0 10px;
-  background-color: transparent;
-
-  &:hover,
-  &:active,
-  &.active {
-    color: #000;
-    border-color: #000;
-  }
-}
-
-.default {
-  composes: default from '../button-group/button-group.module.css';
-  width: auto;
-  height: height;
-  padding: 0 calc(unit * 2);
-  font-size: var(--ring-font-size-smaller);
-  border-radius: var(--ring-border-radius);
-  line-height: height;
-  border: 0;
-  margin: 0;
-
-  &:hover,
-  &:focus {
-    transition: none;
+    box-shadow: button-shadow var(--ring-border-disabled-color);
   }
 }
 

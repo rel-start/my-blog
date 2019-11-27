@@ -1,8 +1,8 @@
-import styles from './Banner.module.css';
-import classnames from 'classnames';
 import React, {
   memo, useState, useCallback, useRef, useEffect
 } from 'react';
+import styles from './banner.module.css';
+import classnames from 'classnames';
 
 /**
  * 图片数据
@@ -169,8 +169,6 @@ export default memo(function Banner(props: IBannerProps) {
 
         {
           new Array(10).fill(null).map((item, i) => {
-            // const rowNum = i % 5;
-            // const colNum = Math.floor(i / 5);
             const lastTrainsitionendIndex = isPrev ? 0 : 9;
             return (
               <em
@@ -193,7 +191,7 @@ export default memo(function Banner(props: IBannerProps) {
       <span className={styles.prev} onClick={prevClick}>&#xe658;</span>
       <span className={styles.next} onClick={nextClick}>&#xe659;</span>
 
-      <div className={styles['banner-pagination']}>
+      <div className={styles['banner-pagination']} style={{ opacity: isStop ? 1 : 0 }}>
         {
           imgsMap.map((img, idx) => {
             return (

@@ -2,15 +2,16 @@
 
 .tab {
   composes: clearfix from '../../assets/stylesheets/global.css';
+
   & span {
     margin-right: 25px;
+    border: 1px solid transparent;
     padding: 0 20px;
+    color: var(--ring-title-color);
     line-height: 40px;
     border-radius: 20px;
     float: left;
-    color: var(--ring-title-color);
     cursor: pointer;
-    border: 1px solid transparent;
     transition: all .5s;
     user-select: none;
 
@@ -19,8 +20,8 @@
     }
 
     &.on {
-      border-color: #3498db;
       color: #3498db;
+      border-color: #3498db;
       font-weight: bold;
     }
   }

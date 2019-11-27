@@ -1,6 +1,6 @@
 .footer-wrapper {
-  background-color: var(--ring-body-background-color);
   padding: 20px 0;
+  background-color: var(--ring-body-background-color);
 }
 
 .footer {
@@ -8,16 +8,16 @@
   line-height: 42px;
 
   & .logo {
-    font-size: 42px;
     margin-left: 20px;
+    font-size: 42px;
     color: var(--ring-logo-color);
     font-family: "duandian";
     float: left;
   }
 
   & .copy {
-    text-align: center;
     display: table-cell;
     width: 9999px;
+    text-align: center;
   }
 }

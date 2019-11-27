@@ -1,0 +1,10 @@
+.notes-list {
+  margin: 0 -10px;
+  padding-top: 15px;
+  composes: clearfix from '../../assets/stylesheets/global.css';
+  overflow: hidden;
+}
+
+.notes-item {
+  margin: 0 10px 15px;
+}

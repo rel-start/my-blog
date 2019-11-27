@@ -2,7 +2,6 @@ import React, {
   memo,
 } from 'react';
 import classnames from 'classnames';
-
 import styles from './button-group.module.css';
 
 /**

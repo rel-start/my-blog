@@ -2,7 +2,7 @@ import React, {
   memo,
 } from 'react';
 
-import styles from './Footer.module.css';
+import styles from './footer.module.css';
 
 export default memo(function Footer(props: IFooterProps) {
 

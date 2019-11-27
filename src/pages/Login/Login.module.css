@@ -1,17 +1,13 @@
 @import '../../assets/stylesheets/variables.css';
 
-.omponent-login {
-  position: relative;
-}
-
 .login {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   left: calc(50% - 230px);
   width: 460px;
   padding: 65px 0 30px;
   background-color: #fff;
+  transform: translateY(-50%);
   border-radius: var(--ring-login-border-radius);
   box-shadow: var(--ring-login-box-shadow);
 
@@ -59,8 +55,8 @@
   & .ways {
     display: flex;
     width: 400px;
-    justify-content: space-around;
     margin: 0 auto;
+    justify-content: space-around;
     color: var(--ring-placeholder-color);
     cursor: pointer;
     line-height: 21px;
@@ -88,6 +84,7 @@
   justify-content: space-between;
   font-size: 12px;
   color: var(--ring-forget-color);
+
   & .links {
     cursor: pointer;
   }

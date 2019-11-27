@@ -11,7 +11,7 @@
 
 .iconfont {
   composes: duandian from '../../assets/stylesheets/global.css';
-  font-size: 18px;
   margin-right: 3px;
+  font-size: 18px;
 }
 

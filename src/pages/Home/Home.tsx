@@ -1,17 +1,14 @@
-import './Home.css';
+import './Home.module.css';
 import React from 'react';
-import Header from '@components/Header/Header';
-import Banner from '@components/Banner/Banner';
-import Notes from '@components/Notes/Notes';
-import Practise from '@components/Practise/Practise';
-import Likes from '@components/Likes/Likes';
-import Footer from '@components/Footer/Footer';
+import Header from '@components/header/header';
+import Banner from '@components/banner/banner';
+import Notes from '@components/notes/notes';
+import Practise from '@components/practise/practise';
+import Likes from '@components/likes/likes';
+import Footer from '@components/footer/footer';
 import Totops from '@components/totop-group/totop-group';
 
 export default function Home(props: IHomeProps) {
-
-  
-
   return (
     <>
       <Header />

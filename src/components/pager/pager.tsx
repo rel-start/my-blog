@@ -1,18 +1,13 @@
 import React, {
-  memo,
-  useState,
-  useMemo,
-  useCallback,
-  MouseEvent,
+  memo, useState, useMemo, useCallback, MouseEvent,
 } from 'react';
+import styles from './pager.module.css';
 import classnames from 'classnames';
+import Theme from '@assets/scripts/theme';
 
 import Button from '../button/button';
-
-import styles from './pager.module.css';
 import ButtonToolbar from '../button-toolbar/button-toolbar';
 import ButtonGroup from '../button-group/button-group';
-import Theme from '@assets/scripts/theme';
 
 export default memo(function Pager(props: IPagerProps) {
   const {
@@ -21,10 +16,7 @@ export default memo(function Pager(props: IPagerProps) {
     visiblePagesLimit = 3,
     pageSize = 16,
     translations = {
-      perPage: 'per page',
       firstPage: 'First page',
-      lastPage: 'Last page',
-      nextPage: 'Next page',
       previousPage: 'Previous',
     },
     onPageChange = () => { },
@@ -52,7 +44,6 @@ export default memo(function Pager(props: IPagerProps) {
         active={active ? 1 : 0}
         onClick={(event: MouseEvent) => handlePageChange(page, event)}
         theme={Theme.DOT}
-        isusedefaultstyle={0}
       >
         {content}
       </Button>

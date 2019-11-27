@@ -5,10 +5,9 @@ import React, {
   useCallback,
   useEffect,
 } from 'react';
-
 import styles from './input.module.css';
-import Theme from '@assets/scripts/theme';
 import classnames from 'classnames';
+import Theme from '@assets/scripts/theme';
 
 function noop() { }
 
