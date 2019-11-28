@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import Input from '@components/input/input';
 import Button from '@components/button/button';
 import Theme from '@assets/scripts/theme';
+import Icon from '@components/icon/icon';
 
 /**
  * @name 忘记密码
@@ -34,7 +35,7 @@ interface ILoginForgetProps {
 const LoginHead = memo(function LoginHead(props: ILoginHeadProps) {
   return (
     <div className={styles["head"]}>
-      <i className={styles["logo"]}>&#xf16f;</i>
+      <Icon className={styles["logo"]} children="&#xf16f;" />
       断点
     </div>
   );
@@ -101,11 +102,11 @@ const From1 = memo(function From1(props: IFrom1Props) {
       />
 
       <LoginForget />
-        <Button
-          theme={Theme.SUBMIT}
-          isusedefaultstyle={0}
-          onClick={onSubmit}
-        >登录</Button>
+      <Button
+        theme={Theme.SUBMIT}
+        isusedefaultstyle={0}
+        onClick={onSubmit}
+      >登录</Button>
     </div>
   );
 })

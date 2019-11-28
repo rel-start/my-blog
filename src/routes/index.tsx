@@ -15,6 +15,9 @@ const Home = lazy(() =>
 const Login = lazy(() =>
   import(/* webpackChunkName:"login" */ "@pages/Login/Login")
 );
+const List = lazy(() =>
+  import(/* webpackChunkName:"list" */ "@pages/List/List")
+);
 
 interface RingProps extends RouteProps {
 
@@ -34,6 +37,11 @@ const routes: RingProps[] = [
     exact: true,
     component: Login,
   },
+  {
+    path: "/list",
+    exact: true,
+    component: List,
+  }
 ];
 
 /**

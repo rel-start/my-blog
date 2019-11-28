@@ -4,7 +4,9 @@ import React, {
 } from 'react';
 import styles from './header.module.css';
 import classnames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
+import Icon from '@components/icon/icon';
 
 /**
  * 登录
@@ -13,7 +15,7 @@ const HLogin = memo(function HLogin(props: ILoginProps) {
 
   return (
     <div className={styles["h-login"]}>
-      <Link to="/login">登录</Link>
+      <Link to="/login"><Icon className={styles["h-login-icon"]} children="&#xe63c;" />登录</Link>
     </div>
   );
 })
@@ -31,7 +33,7 @@ const HSearch = memo(function HSearch(props: IHSearchProps) {
 
   return (
     <form className={styles["h-search"]}>
-      <i className={styles["icon-search"]} onClick={() => setOn(!on)} >&#xe7c1;</i>
+      <Icon className={styles["icon-search"]} onClick={() => setOn(!on)} children="&#xe7c1;" />
       <div className={
         classnames(styles['input-group'], { [styles.on]: on })
       }>
@@ -80,41 +82,41 @@ const Navbar = memo(function Navbar(props: INavbarProps) {
 
   return (
     <ul className={styles["navbar"]}>
-      <li className={styles["navbar__item"]}><Link to="/">首页</Link></li>
+      <li className={styles["navbar__item"]}><NavLink exact to="/" activeClassName={styles["selected"]}>首页</NavLink></li>
       <li className={styles["navbar__item"]}>
-        <Link to="/" className={styles["more"]}>笔记</Link>
+        <NavLink to="/list" className={styles["more"]} activeClassName={styles["selected"]}>笔记</NavLink>
         <SubNav items={[
           {
             text: 'Java',
-            url: '/',
+            url: '/list/list1',
           },
           {
             text: 'React',
-            url: '/',
+            url: '/list/list2',
           }
         ]} />
       </li>
       <li className={styles["navbar__item"]}>
-        <Link to="/">练习</Link>
+        <NavLink exact to="/ab" activeClassName={styles["selected"]}>练习</NavLink>
       </li>
       <li className={styles["navbar__item"]}>
-        <Link to="/">作品</Link>
+        <NavLink exact to="/cd" activeClassName={styles["selected"]}>作品</NavLink>
       </li>
       <li className={styles["navbar__item"]}>
-        <Link to="/" className={styles["more"]}>学习</Link>
+        <NavLink to="/ee" className={styles["more"]} activeClassName={styles["selected"]}>学习</NavLink>
         <SubNav items={[
           {
             text: '感兴趣的文章',
-            url: '/',
+            url: '/ee/ee1',
           },
           {
             text: '需实现特效',
-            url: '/',
+            url: '/ee/ee2',
           }
         ]} />
       </li>
       <li className={styles["navbar__item"]}>
-        <Link to="/">个人难题</Link>
+        <NavLink exact to="/dd" activeClassName={styles["selected"]}>个人难题</NavLink>
       </li>
     </ul >
   );
@@ -132,7 +134,7 @@ export default memo(function Header(props: IHeaderProps) {
   return (
     <div className={styles["header"]}>
       <div className={styles["header-wrapper"]}>
-        <h1><i className={styles["logo"]}>&#xf16f;</i></h1>
+        <h1><Icon children="&#xf16f;" className={styles.logo} /></h1>
         <Navbar />
         <HLogin />
         <HSearch />

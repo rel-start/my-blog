@@ -2,8 +2,8 @@
 
 .buttonToolbar {
   display: inline-block;
-  white-space: nowrap;
   font-size: 0;
+  white-space: nowrap;
 
   & > .buttonGroup {
     margin-right: unit;

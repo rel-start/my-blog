@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 
 import TextUser from '../text-user/text-user';
 import Text from '../text/text';
+import {
+  GithubIcon, CodesanboxIcon
+} from '@components/icon/icons';
 
 /**
  * PractiseItem
@@ -33,8 +36,8 @@ const PractiseItem = memo(function PractiseItem(props: IPractiseItemProps) {
         </TextUser>
         <p className={styles["links"]}>
 
-          <Text href={github} codes="&#xe722;" types="icons">github</Text>
-          <Text href={codeSandbox} codes="&#xe69f;" types="icons">codeSandbox</Text>
+          <Text href={github} icons={<GithubIcon/>}>github</Text>
+          <Text href={codeSandbox} icons={<CodesanboxIcon/>}>codeSandbox</Text>
         </p>
       </div>
     </div>

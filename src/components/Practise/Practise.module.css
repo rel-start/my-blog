@@ -5,8 +5,8 @@
 }
 
 .practise {
-  padding: 40px 0;
   composes: w1180 from '../../assets/stylesheets/global.css';
+  padding: 40px 0;
 
   & .practise-head {
     margin-bottom: 20px;

@@ -63,12 +63,16 @@ const notes = [
 
 
 export default memo(function NoteList(props: INoteListProps) {
+  const {
+    list = notes,
+    canvas,
+  } = props;
 
   return (
     <ul className={styles["notes-list"]}>
-      <CanvasItem />
+      {canvas && <CanvasItem />}
       {
-        notes.map((note: any, idx: number) => {
+        list.map((note: any, idx: number) => {
           return (
             <NotesItem className={styles["notes-item"]} {...note} key={idx} />
           );

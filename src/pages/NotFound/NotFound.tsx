@@ -1,9 +1,14 @@
-import React,{memo} from 'react';
+import React, { memo } from 'react';
+
+import Header from '@components/header/header';
 
 export default memo(function NotFound(props: INotFoundProps) {
 
   return (
-    <div>我是404</div>
+    <>
+      <Header />
+      <div>我是404</div>
+    </>
   );
 })
 

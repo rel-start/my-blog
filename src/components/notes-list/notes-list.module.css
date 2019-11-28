@@ -1,7 +1,8 @@
 .notes-list {
+  composes: clearfix from '../../assets/stylesheets/global.css';
+  width: 1200px;
   margin: 0 -10px;
   padding-top: 15px;
-  composes: clearfix from '../../assets/stylesheets/global.css';
   overflow: hidden;
 }
 

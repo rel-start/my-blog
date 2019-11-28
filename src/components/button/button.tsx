@@ -5,7 +5,6 @@ import styles from './button.module.css';
 import classname from 'classnames';
 import Theme from '@assets/scripts/theme';
 
-
 /**
  * @name Button
  */
@@ -13,12 +12,19 @@ export default memo(function TButton(props: IButtonProps) {
   const {
     theme = Theme.LIGHT,
     onMouseDown = () => { },
-    children = "1",
+    children,
     className,
     active,
+
+    icons,
+    dropdown,
+    href,
   }: any = props;
 
-  const Tag = 'button';
+  // 是否是a标签
+  const isLink = !!href;
+
+  const Tag = isLink ? 'a' : 'button';
 
   // Button样式：主要是以theme来区分
   const classes = classname(
@@ -30,19 +36,20 @@ export default memo(function TButton(props: IButtonProps) {
     }
   );
 
+  // Button的内容
   const content = (
-    <span>
-      {
-        children && (
-          <>{children}</>
-        )
-      }
+    <span className={styles.content}>
+      {icons}
+      {children && (
+        <>{children}</>
+      )}
+      {dropdown}
     </span>
   );
 
   return (
     <Tag
-      type='button'
+      {...(isLink ? null : { type: 'button', href })}
       className={classes}
       {...props}
       onMouseDown={onMouseDown}

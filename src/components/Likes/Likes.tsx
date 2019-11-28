@@ -9,10 +9,13 @@ import Tab from '@components/tab/tab';
 import TextUser from '@components/text-user/text-user';
 import Text from '@components/text/text';
 import Pager from '@components/pager/pager';
-
+import {
+  LikesTimeIcon
+} from '@components/icon/icons';
 
 /**
- *  ArticleItem
+ * @page Home
+ * @component ArticleItem
  */
 const ArticleItem = memo(function articleItem(props: IarticleItemProps) {
   const {
@@ -34,7 +37,7 @@ const ArticleItem = memo(function articleItem(props: IarticleItemProps) {
         <div className={styles["msg"]}>
           <div className={styles["head"]}>
             <h3 className={styles["title"]}>{title}</h3>
-            <Text className={styles["times"]} title="阅读数" codes="&#xe71a;" types="icons">{dayjs(times).format(' MM-DD HH:mm')}</Text>
+            <Text className={styles["times"]} title="阅读数" icons={<LikesTimeIcon />}>{dayjs(times).format(' MM-DD HH:mm')}</Text>
           </div>
           <p className={styles["description"]}>{content}</p>
           <TextUser adimg={adimg}>
@@ -86,7 +89,8 @@ const articles = [
 ]
 
 /**
- * AsideItem
+ * @page Home
+ * @description AsideItem
  */
 const AsideItem = memo(function AsideItem(props: IAsideItemProps) {
   const {
@@ -121,7 +125,8 @@ const asides = [
 ]
 
 /**
- * Likes
+ * @page Home
+ * @description Likes
  */
 export default memo(function Likes(props: ILikesProps) {
 

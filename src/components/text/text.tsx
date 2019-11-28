@@ -8,14 +8,14 @@ export default memo(function Text(props: ITextProps) {
   const {
     className,
     children,
-    types,
-    codes,
+    icons,
     href,
+    types,
   } = props;
 
   const classes = classnames(className, {
-    [styles.ellipsis]: types === 'ellipsis',
-    [styles.icons]: types === 'icons',
+    [styles.ellipsis]: types==='ellipsis',
+    [styles.icons]: icons,
   });
 
   const Tag = href ? 'a' : 'dfn';
@@ -26,7 +26,7 @@ export default memo(function Text(props: ITextProps) {
       {...href ? { href } : ''}
       className={classes}
     >
-      {types === 'icons' && <i className={styles.iconfont}>{codes}</i>}
+      {icons}
       {children}
     </Tag>
   );

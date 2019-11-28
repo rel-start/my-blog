@@ -9,10 +9,10 @@
 }
 
 .buttonGroup {
+  composes: buttonGroup from "../button-toolbar/button-toolbar.module.css";
   z-index: 0;
   position: relative;
   display: inline-block;
-  composes: buttonGroup from "../button-toolbar/button-toolbar.module.css";
   white-space: nowrap;
 
   & button {

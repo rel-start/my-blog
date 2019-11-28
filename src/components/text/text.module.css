@@ -9,9 +9,6 @@
   align-items: center;
 }
 
-.iconfont {
-  composes: duandian from '../../assets/stylesheets/global.css';
+.icon-mr3 {
   margin-right: 3px;
-  font-size: 18px;
 }
-

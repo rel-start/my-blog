@@ -45,6 +45,7 @@
 
 /* 默认样式 */
 .light {
+  composes: light from '../button-group/button-group.module.css';
   width: auto;
   height: height;
   margin: 0;
@@ -53,7 +54,6 @@
   font-size: var(--ring-font-size-smaller);
   color: var(--ring-text-color);
   background-color: var(--ring-content-background-color);
-  composes: light from '../button-group/button-group.module.css';
   border-radius: var(--ring-border-radius);
   line-height: height;
   box-shadow: button-shadow var(--ring-borders-color);
@@ -93,4 +93,10 @@
   text-decoration: none;
   outline: 0;
   font-family: var(--ring-font-family);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

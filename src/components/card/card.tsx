@@ -5,6 +5,9 @@ import classnames from 'classnames';
 
 import Text from '@components/text/text';
 import TextUser from '@components/text-user/text-user';
+import {
+  ViewCountsIcon, CommentsIcon, LikeNumsIcon
+} from '@components/icon/icons';
 
 /**
  * 卡片，笔记列表的每项
@@ -32,13 +35,13 @@ export default memo(function Card(props: ICardProps) {
       <div className={styles["info"]}>
         <Text title={title} className={styles["title"]} types="ellipsis">{title}</Text>
         <div className={styles["msg"]}>
-          <Text className={styles["view-counts"]} title="阅读数" codes="&#xe722;" types="icons">{viewCounts}</Text>
-          <Text className={styles["comments"]} title="评论数" codes="&#xe64d;" types="icons">{comments}</Text>
-          <Text className={styles["like-nums"]} title="点赞数" codes="&#xe69f;" types="icons">{likeNums}</Text>
+          <Text className={styles["view-counts"]} title="阅读数" icons={<ViewCountsIcon />}>{viewCounts}</Text>
+          <Text className={styles["comments"]} title="评论数" icons={<CommentsIcon />}>{comments}</Text>
+          <Text className={styles["like-nums"]} title="点赞数" icons={<LikeNumsIcon />}>{likeNums}</Text>
         </div>
         <div className={styles["auther"]}>
           <TextUser adimg={adimg}>
-            <Text title={auther} types="ellipsis">{auther}</Text>
+            <Text title={auther}>{auther}</Text>
           </TextUser>
         </div>
       </div>
