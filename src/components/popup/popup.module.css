@@ -1,0 +1,24 @@
+@import '../../assets/stylesheets/variables.css';
+
+.popup {
+  composes: font from '../../assets/stylesheets/global.css';
+  position: absolute;
+  z-index: var(--ring-overlay-z-index);
+
+  top: -9999px;
+  left: -9999px;
+
+  box-sizing: border-box;
+  background-color: #fff;
+  transition: opacity var(--ring-ease);
+}
+
+.hidden {
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
+}
+
+.showing {
+  opacity: 0;
+}

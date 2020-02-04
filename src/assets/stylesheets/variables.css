@@ -6,10 +6,17 @@
   --ring-border-hover-color: #80c6ff;
   --ring-border-disabled-color: #dbdbdb;
   --ring-login-box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+  --ring-menu-box-shadow: 0 0 3px rgba(0, 0, 0, .1);
   --ring-login-border-radius: 24px;
   --ring-login-logo: #4880f7;
   --ring-main-color: #008eff;
   --ring-icon-error-color: #db5860;
+  --ring-btn-dropdown-border-color: #d7dcde;
+  --ring-btn-dropdown-color: #34495e;
+  --ring-btn-dropdown-icon-color: #1abc9c;
+  --ring-popup-border-components: 0, 42, 76;
+  --ring-popup-border-color: rgba(var(--ring-popup-border-components), 0.1);
+  --ring-popup-shadow-color: rgba(var(--ring-popup-border-components), 0.15);
 
   /* Text */
   --ring-text-color: #1f2326;
@@ -29,8 +36,10 @@
   --ring-selected-background-color: #d4edff;
   --ring-body-background-color: #f0f3f5;
   --ring-practise-background-color: #eaeef2;
+  --ring-footer-background-color: #e6eaed;
   --rint-totop-background-color: #dbe0e6;
   --ring-submit-background-color: #e5e5e5;
+
 
   /* Metrics */
   --ring-border-radius: 3px;
@@ -42,6 +51,9 @@
   --ring-line-height: 20px;
   --ring-line-height-lower: 18px;
 
-  /* TODO: return raw value back if this issue fixed https://github.com/JLHwung/postcss-font-family-system-ui/issues/65 */
-  --ring-font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Arial, sans-serif;
+  /* font */
+  --ring-font-family: 'Microsoft YaHei', 'helvetica neue', 'hiragino sans gb', stheiti, 'wenquanyi micro hei', \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, sans-serif;
+
+  /* 应该覆盖页面上所有其他元素的元素 */
+  --ring-overlay-z-index: 5;
 }

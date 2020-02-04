@@ -141,4 +141,11 @@
 
 .mr3 { margin-right: 3px; }
 
-
+/**
+* 字体相关
+*/
+.font {
+  font-family: var(--ring-font-family);
+  font-size: var(--ring-font-size);
+  line-height: var(--ring-line-height);
+}

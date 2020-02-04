@@ -83,6 +83,16 @@ export const Portfolio = memo(function Portfolio(props: IPortfolioProps) {
   return (
     <div className={styles["notes-wrapper"]}>
       <NotesList list={list} />
+
+      <div className={styles["notes-pagination"]}>
+        <Pager
+          className={styles["pagination-wrapper"]}
+          shape="square"
+          onPageChange={(i: any) => {
+            console.log('第' + i + '页')
+          }}
+        ></Pager>
+      </div>
     </div>
   );
 })

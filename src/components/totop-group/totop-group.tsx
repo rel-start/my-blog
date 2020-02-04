@@ -1,5 +1,5 @@
 import React, {
-  memo,
+  memo
 } from 'react';
 import styles from './totop-group.module.css';
 
@@ -10,7 +10,11 @@ import useWinScroll from '@assets/scripts/useWinScroll';
  */
 const Totop = memo(function Totop(props: ITotopProps) {
   const onClick = (event: any) => {
-    document.body.scrollIntoView({ behavior: "smooth" });
+    if (typeof document.body.scrollIntoView === 'function') {
+      document.body.scrollIntoView({ behavior: "smooth" });
+    } else {
+      document.body.scrollTop = document.documentElement.scrollTop = 0
+    }
   }
 
   return (

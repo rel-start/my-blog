@@ -3,9 +3,11 @@
 .header {
   height: 70px;
   background-color: #fff;
+  /* overflow: hidden; */
 
   & h1 {
     float: left;
+    height: 70px;
   }
 
   & .logo {
@@ -28,44 +30,32 @@
 .navbar__item {
   position: relative;
   float: left;
+}
 
-  &:hover {
-    & .subnav {
-      display: block;
-    }
+.navbar__link {
+  display: block;
+  min-width: 80px;
+  height: 70px;
+  border-top: 4px solid transparent;
+  padding: 0 10px;
+  line-height: 62px;
+  text-align: center;
+  transition: all .2s;
 
-    & > a {
-      color: inherit;
-      border-top-color: #3498db;
-      box-shadow: 0 0 2px rgba(0, 0, 0, .1);
-      color: var(--ring-main-color);
-    }
+  @nest .navbar__item:hover &,
+  &.selected {
+    color: inherit;
+    border-top-color: #3498db;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .1);
+    color: var(--ring-main-color);
   }
 
-  & > a {
-    display: block;
-    min-width: 80px;
-    height: 70px;
-    border-top: 4px solid transparent;
-    padding: 0 10px;
-    line-height: 62px;
-    text-align: center;
-    transition: all .2s;
-
-    &.selected {
-      color: inherit;
-      border-top-color: #3498db;
-      box-shadow: 0 0 2px rgba(0, 0, 0, .1);
-      color: var(--ring-main-color);
-    }
-
-    &.more:after {
-      margin-left: 5px;
-      font-size: 12px;
-      color: var(--ring-header-icon-color);
-      font-family: "duandian";
-      content: "\e604";
-    }
+  &.more:after {
+    margin-left: 5px;
+    font-size: 12px;
+    color: var(--ring-header-icon-color);
+    font-family: "duandian";
+    content: "\e604";
   }
 }
 
@@ -77,6 +67,10 @@
   display: none;
   background-color: #fff;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, .1);
+
+  @nest .navbar__item:hover & {
+    display: block;
+  }
 
   & a {
     display: block;

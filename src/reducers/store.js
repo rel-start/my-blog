@@ -4,13 +4,17 @@ import {
   applyMiddleware,
 } from 'redux';
 
-import homeReducer from './homeReducer';
+import listPageReducer from './listPageReducer';
 import thunk from 'redux-thunk';
 
 export default createStore(
-  combineReducers(homeReducer),
+  combineReducers({
+    ...listPageReducer,
+  }),
   {
-    trainNumber: null,
+    listFilterMenu1: '最新',
+    listFilterMenu2: '全部分类',
+    listFilterMenu3: '全部时间',
   },
   applyMiddleware(thunk)
 );

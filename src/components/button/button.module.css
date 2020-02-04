@@ -6,6 +6,44 @@
 
 @value button-shadow: inset 0 0 0 1px;
 
+.button {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: color var(--ring-ease), background-color var(--ring-ease), box-shadow var(--ring-ease);
+  text-decoration: none;
+  outline: 0;
+  font-family: var(--ring-font-family);
+
+  & .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Button下拉列表 */
+.dropdown {
+  width: 140px;
+  height: 42px;
+  border: 1px solid var(--ring-btn-dropdown-border-color);
+  padding-right: 12px;
+  padding-left: 20px;
+  color: var(--ring-btn-dropdown-color);
+  background-color: transparent;
+  text-align: left;
+  font-weight: bold;
+  transition: background-color var(--ring-ease);
+
+  & .content {
+    justify-content: start;
+  }
+
+  &:hover {
+    background-color: #fff;
+  }
+}
 
 /* Login组件的登录按钮 */
 .submit {
@@ -24,8 +62,6 @@
   width: 38px;
   height: 38px;
   margin: 0 10px;
-  margin: 0 10px;
-  border: 1px solid #bdc3c7;
   border: 1px solid #bdc3c7;
   padding: 0;
   font-size: 20px;
@@ -40,6 +76,23 @@
   &.active {
     color: #000;
     border-color: #000;
+  }
+}
+
+.square {
+  width: 40px;
+  border-radius: var(--ring-border-radius);
+  background-color: #e7ebee;
+  height: 40px;
+  font-size: 14px;
+  border: 0;
+  margin-right: 10px;
+
+  &:hover,
+  &:active,
+  &.active {
+    background-color: var(--ring-main-color);
+    color: #fff;
   }
 }
 
@@ -84,19 +137,4 @@
   }
 }
 
-.button {
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: color var(--ring-ease), background-color var(--ring-ease), box-shadow var(--ring-ease);
-  text-decoration: none;
-  outline: 0;
-  font-family: var(--ring-font-family);
-}
 
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

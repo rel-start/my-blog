@@ -1,12 +1,20 @@
 import React, {
-  memo,
+  memo, useEffect, useMemo
 } from 'react';
-// import styles from './List.module.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import Header from '@components/header/header';
 import Totops from '@components/totop-group/totop-group';
 import Footer from '@components/footer/footer';
-import {Portfolio} from '@components/notes/notes';
+import { Portfolio } from '@components/notes/notes';
+import ListFilter from '@components/list-filter/list-filter';
+
+import {
+  setListFilterMenu1,
+  setListFilterMenu2,
+  setListFilterMenu3,
+} from '@reducers/actions.js';
 
 const data = [
   {
@@ -128,22 +136,54 @@ const data = [
   },
 ];
 
-
-
 /**
  * List 页面
  */
-export default memo(function List(props: IListProps) {
+const List = memo(function List(props: IListProps) {
+  const {
+    listFilterMenu1,
+    listFilterMenu2,
+    listFilterMenu3,
+    dispatch,
+  } = props;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+  const listFilterCbs = useMemo(() => {
+    return bindActionCreators({
+      setListFilterMenu1,
+      setListFilterMenu2,
+      setListFilterMenu3,
+    }, dispatch);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
       <Header />
+      <ListFilter
+        listFilterMenu1={listFilterMenu1}
+        listFilterMenu2={listFilterMenu2}
+        listFilterMenu3={listFilterMenu3}
+        {...listFilterCbs}
+      />
       <Portfolio list={data} />
       <Footer />
       <Totops />
     </>
   );
-})
+});
+
+export default connect(
+  function mapStateProps(state) {
+    return state;
+  },
+  function mapDispatchToProps(dispatch) {
+    return { dispatch };
+  }
+)(List);
 
 interface IListProps {
   [propsName: string]: any

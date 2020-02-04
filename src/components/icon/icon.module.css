@@ -15,3 +15,10 @@
 .icon-mr3 {
   margin-right: 3px;
 }
+
+.icon-dropdown {
+  position: absolute;
+  right: 12px;
+  color: var(--ring-btn-dropdown-icon-color);
+  font-size: 16px;
+}

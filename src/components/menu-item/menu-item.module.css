@@ -1,0 +1,25 @@
+@import "../../assets/stylesheets/variables.css";
+
+.menu-item {
+  background-color: #fff;
+  padding-right: 12px;
+  padding-left: 20px;
+  height: 44px;
+  line-height: 44px;
+  cursor: pointer;
+  font-weight: bold;
+  border-left: 1px solid var(--ring-btn-dropdown-border-color);
+  border-right: 1px solid var(--ring-btn-dropdown-border-color);
+  transition: background-color var(--ring-ease), border-color var(--ring-ease);
+
+  &:hover {
+    background-color: #eae9e9;
+  }
+
+  &.active {
+    background-color: var(--ring-a-hover-color) !important;
+    color: #fff;
+    border-left-color: var(--ring-a-hover-color); 
+    border-right-color: var(--ring-a-hover-color); 
+  }
+}

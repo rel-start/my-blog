@@ -27,10 +27,6 @@
   outline: none;
   caret-color: var(--ring-main-color);
 
-  @nest .clearable & {
-    padding-right: calc(unit * 3);
-  }
-
   @nest .light & {
     color: var(--ring-text-color);
   }

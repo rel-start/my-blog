@@ -70,7 +70,7 @@ export default memo(function NoteList(props: INoteListProps) {
 
   return (
     <ul className={styles["notes-list"]}>
-      {canvas && <CanvasItem />}
+      {/*canvas && <CanvasItem />*/}
       {
         list.map((note: any, idx: number) => {
           return (

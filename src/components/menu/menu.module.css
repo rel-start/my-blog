@@ -1,0 +1,5 @@
+@import "../../assets/stylesheets/variables.css";
+
+.menu {
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+}

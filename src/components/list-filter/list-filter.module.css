@@ -1,0 +1,12 @@
+@import "../../assets/stylesheets/variables.css";
+
+.list-filter {
+  composes: w1180 from '../../assets/stylesheets/global.css';
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.item {
+  margin-right: 20px;
+}
+

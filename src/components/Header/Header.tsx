@@ -82,9 +82,9 @@ const Navbar = memo(function Navbar(props: INavbarProps) {
 
   return (
     <ul className={styles["navbar"]}>
-      <li className={styles["navbar__item"]}><NavLink exact to="/" activeClassName={styles["selected"]}>首页</NavLink></li>
+      <li className={styles["navbar__item"]}><NavLink className={styles["navbar__link"]} exact to="/" activeClassName={styles["selected"]}>首页</NavLink></li>
       <li className={styles["navbar__item"]}>
-        <NavLink to="/list" className={styles["more"]} activeClassName={styles["selected"]}>笔记</NavLink>
+        <NavLink to="/list" className={classnames(styles["more"], styles["navbar__link"])} activeClassName={styles["selected"]}>笔记</NavLink>
         <SubNav items={[
           {
             text: 'Java',
@@ -97,13 +97,13 @@ const Navbar = memo(function Navbar(props: INavbarProps) {
         ]} />
       </li>
       <li className={styles["navbar__item"]}>
-        <NavLink exact to="/ab" activeClassName={styles["selected"]}>练习</NavLink>
+        <NavLink className={styles["navbar__link"]} exact to="/ab" activeClassName={styles["selected"]}>练习</NavLink>
       </li>
       <li className={styles["navbar__item"]}>
-        <NavLink exact to="/cd" activeClassName={styles["selected"]}>作品</NavLink>
+        <NavLink className={styles["navbar__link"]} exact to="/cd" activeClassName={styles["selected"]}>作品</NavLink>
       </li>
       <li className={styles["navbar__item"]}>
-        <NavLink to="/ee" className={styles["more"]} activeClassName={styles["selected"]}>学习</NavLink>
+        <NavLink to="/ee" className={classnames(styles["more"], styles["navbar__link"])} activeClassName={styles["selected"]}>学习</NavLink>
         <SubNav items={[
           {
             text: '感兴趣的文章',
@@ -116,7 +116,10 @@ const Navbar = memo(function Navbar(props: INavbarProps) {
         ]} />
       </li>
       <li className={styles["navbar__item"]}>
-        <NavLink exact to="/dd" activeClassName={styles["selected"]}>个人难题</NavLink>
+        <NavLink className={styles["navbar__link"]} exact to="/dd" activeClassName={styles["selected"]}>个人难题</NavLink>
+      </li>
+      <li className={styles["navbar__item"]}>
+        <a className={styles["navbar__link"]} href="https://github.com/rel-start/my-blog">当前源码</a>
       </li>
     </ul >
   );

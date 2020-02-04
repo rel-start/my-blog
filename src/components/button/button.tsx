@@ -18,13 +18,11 @@ export default memo(function TButton(props: IButtonProps) {
 
     icons,
     dropdown,
-    href,
+    ...restProps
   }: any = props;
 
-  // 是否是a标签
-  const isLink = !!href;
 
-  const Tag = isLink ? 'a' : 'button';
+  const Tag = 'button';
 
   // Button样式：主要是以theme来区分
   const classes = classname(
@@ -49,9 +47,9 @@ export default memo(function TButton(props: IButtonProps) {
 
   return (
     <Tag
-      {...(isLink ? null : { type: 'button', href })}
+      type='button'
       className={classes}
-      {...props}
+      {...restProps}
       onMouseDown={onMouseDown}
     >
       {content}

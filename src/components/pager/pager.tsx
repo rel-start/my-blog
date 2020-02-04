@@ -15,13 +15,14 @@ export default memo(function Pager(props: IPagerProps) {
     currentPage = 1,
     visiblePagesLimit = 3,
     pageSize = 16,
-    translations = {
-      firstPage: 'First page',
-      previousPage: 'Previous',
-    },
+    // translations = {
+    //   nextPage: 'Next page',
+    //   previousPage: 'Previous',
+    // },
     onPageChange = () => { },
     className,
-    disableFirstAndLastPage = true,
+    // disableFirstAndLastPage = true,
+    shape,
   } = props;
 
   const [curPage, setCurPage] = useState(currentPage);
@@ -43,7 +44,7 @@ export default memo(function Pager(props: IPagerProps) {
         key={key}
         active={active ? 1 : 0}
         onClick={(event: MouseEvent) => handlePageChange(page, event)}
-        theme={Theme.DOT}
+        theme={shape === "square" ? Theme.SQUARE : Theme.DOT}
       >
         {content}
       </Button>
@@ -86,16 +87,15 @@ export default memo(function Pager(props: IPagerProps) {
       buttons.push(getButton({ page: i, content: i, key: i, active: i === curPage }));
     }
 
-    const lastPageButtonAvailabel = (!disableFirstAndLastPage && end < totalPages);
 
     return (
       <>
         <ButtonToolbar>
-          {(!disableFirstAndLastPage && start > 1) && (
+          {(start > 1) && (
             <ButtonGroup>
               {getButton({
                 page: 1,
-                content: translations.firstPage,
+                content: 1,
               })}
             </ButtonGroup>
           )}
@@ -108,11 +108,11 @@ export default memo(function Pager(props: IPagerProps) {
             {end < totalPages && getButton({ page: end + 1, content: '...' })}
           </ButtonGroup>
 
-          {lastPageButtonAvailabel && (
+          {end < totalPages && (
             <ButtonGroup>
               {getButton({
                 page: totalPages,
-                content: translations.lastPage,
+                content: totalPages,
               })}
             </ButtonGroup>
           )}

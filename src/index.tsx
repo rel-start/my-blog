@@ -1,8 +1,14 @@
+import './assets/scripts/polyfill.js';
+import 'core-js/es';
+import 'mutation-observer';
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/stable';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import '@assets/stylesheets/rest.css';
 import '@assets/stylesheets/index.css';
@@ -11,11 +17,11 @@ import routes from './routes/index';
 
 
 ReactDOM.render(
-  <BrowserRouter basename="/my-blog">
+  <HashRouter basename="/my-blog">
     <Provider store={store}>
       {routes()}
     </Provider>
-  </BrowserRouter>
+  </HashRouter>
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
